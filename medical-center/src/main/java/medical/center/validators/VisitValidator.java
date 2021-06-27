@@ -27,10 +27,10 @@ public class VisitValidator {
             throw new BusinessException("You can book visit only between 8 and 17:45");
         }
         boolean hourBeforeEndWorkingHours = visit.getStartTime().getHour() > 17;
-        boolean minue = visit.getStartTime().getMinute() > 45;
+        boolean minute = visit.getStartTime().getMinute() > 45;
         boolean hourAfterWorkingHours = visit.getStartTime().getHour() >= 18;
 
-        if (hourAfterWorkingHours || (hourBeforeEndWorkingHours && minue)) {
+        if (hourAfterWorkingHours || (hourBeforeEndWorkingHours && minute)) {
             throw new BusinessException("You can book visit only between 8 and 17:45");
 
         }
